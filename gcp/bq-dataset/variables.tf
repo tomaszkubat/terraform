@@ -1,21 +1,21 @@
 variable "bq_region" {
-    type = string
-    descsription = "<REQUIRED> BQ region; may be a multiregion"
-    default = "EU"
+  default     = "EU"
+  description = "<REQUIRED> BQ region; may be a multiregion"
+  type        = string
 }
 
 variable "configuration_path" {
-    type = string
-    description = "<REQUIRED> path to dataset configuration files"
+  description = "<REQUIRED> path to dataset configuration files"
+  type        = string
 }
 
 variable "dataset_prefix" {
-    type = string
-    desription = "<OPTIONAL> dataste prexif"
-    default = ""
+  default     = ""
+  description = "<OPTIONAL> dataste prexif"
+  type        = string
 }
 
 variable "project_id" {
-    type = string
-    description = "<REQUIRED> gc project id"
+  description = "<REQUIRED> gc project id"
+  type        = string
 }
