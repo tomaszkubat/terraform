@@ -2,8 +2,8 @@
 
 - [Usage](#usage)
 - [Modules](#modules)
-  - [GCP](#gcp)
-  - [Test](#test)
+  - [gcp](#gcp)
+  - [null](#null)
 
 # Usage
 
@@ -16,6 +16,6 @@ module "my_module_usage" {
 
 # Modules
 
-## GCP
+## gcp
 
-## Test
+## null
