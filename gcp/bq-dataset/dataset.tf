@@ -1,7 +1,7 @@
 locals {
   # get dataset configuration data
   dataset_meta_file_content = jsondecode(file("dataset/dataset.meta"))
-  dataset_id                = "${dataset_prefix}${dataset_meta_file_content["dataset_name"]}"
+  dataset_id                = "${var.dataset_prefix}${local.dataset_meta_file_content["dataset_name"]}"
 }
 
 resource "google_bigquery_dataset" "dataset" {
