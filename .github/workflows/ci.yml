@@ -16,7 +16,10 @@ jobs:
     name: Terraform Validation
     runs-on: ubuntu-latest
     strategy:
-      matrix: { env: ["gcp/bq-dataset"] }
+      matrix: { env: [
+        "gcp/bq-dataset",
+        "ps-write-subscription"
+      ] }
     defaults:
       run:
         working-directory: "${{ matrix.env }}"
@@ -37,5 +40,5 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      # - name: Terraform Validate
-      #   run: terraform validate -no-color
+      - name: Terraform Validate
+        run: terraform validate -no-color
