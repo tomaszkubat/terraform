@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix: { env: [
         "gcp/bq-dataset",
-        "ps-write-subscription"
+        "gcp/ps-write-subscription"
       ] }
     defaults:
       run:
