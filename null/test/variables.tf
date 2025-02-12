@@ -1,5 +1,5 @@
 variable "length" {
-  description = "The length of the string"
+  description = "The required length of the string"
   type        = string
   default     = 16
 }
