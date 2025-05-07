@@ -1,5 +1,7 @@
+# Release Terraform on master merge
+
 # from: https://github.com/techpivot/terraform-modules-demo/tree/main
-name: Terraform Module Releaser
+name: Release Terraform
 on:
   pull_request:
     types: [opened, reopened, synchronize, closed] # Closed required
