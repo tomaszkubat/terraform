@@ -20,8 +20,7 @@ jobs:
     strategy:
       matrix: { env: [
         "gcp/bq-dataset",
-        "gcp/ps-write-subscription"
-      ] }
+        "gcp/ps-write-subscription"]}
     defaults:
       run:
         working-directory: "${{ matrix.env }}"
@@ -50,11 +49,10 @@ jobs:
     strategy:
       matrix: { env: [
         "gcp/bq-dataset",
-        "gcp/ps-write-subscription"
-      ] }
+        "gcp/ps-write-subscription"]}
     defaults:
       run:
         working-directory: "${{ matrix.env }}"
-      steps:
-        - name: Dummy
-          run: pwd
+    steps:
+      - name: Dummy
+        run: pwd
