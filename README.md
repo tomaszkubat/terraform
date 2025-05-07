@@ -17,6 +17,8 @@ For testing use [null module](#null).
 
 # Modules
 
+Terraform modules.
+
 ## gcp
 
 ### bq-dataset
@@ -28,9 +30,9 @@ Supported:
 | resource | status | description |
 |---|---|---|
 | dataset  | ✔️ | |
-| table  | ❌ | in the future |
+| table  | ✔️ | work in progress |
 | view | ❌ | in the future |
-
+| scheduled query | ❌ | in the future |
 
 ### ps-write-subsription
 

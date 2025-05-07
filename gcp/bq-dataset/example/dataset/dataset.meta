@@ -3,7 +3,7 @@
     "description": "my description",
     "friendly_nam": "my friendly_nam",
     "labels": {
-        "label1": "value1"
+        "datasetlabel1": "value1",
+        "datasetlabel2": "value2"
     }
 }
-
