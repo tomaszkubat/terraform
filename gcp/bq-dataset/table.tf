@@ -1,7 +1,4 @@
 locals {
-  table_schema_path = "tables/schema/"
-  table_meta_path   = "tables/meta/"
-
   table_files = fileset(local.table_schema_path, "*.json")
 
   table_config_map = {
