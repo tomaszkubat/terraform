@@ -45,6 +45,7 @@ Null/dummy resource which may be used to test `terraform` importf from `Github`.
 
 ```terraform
 module "my_module_usage" {
-  source = "git@github.com:tomaszkubat/terraform.git?ref=null/test"
+  # clone over https
+  source = "github.com/tomaszkubat/terraform/null/test"
 }
 ```
