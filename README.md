@@ -43,7 +43,9 @@ Supported:
 ### Prerequisites
 
 To use this module it's required to fulfill some prerequisites:
-- aa
+- pubsub `topic` - created in any GCP project, which will serve as and data endpoint,
+- `iam` permissions added to attach subscription on the `topic`,
+- `bq` tables for data and dead letter already created.
 
 ### Supported resources
 
