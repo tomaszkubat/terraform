@@ -1,17 +1,17 @@
 # dead letter topic for error handling
 resource "google_pubsub_topic" "dead_letter" {
-    name = "${var.subscription_name}_dead_letter"
-    project = var.project_id
+  name    = "${var.subscription_name}_dead_letter"
+  project = var.project_id
 
-    lifecycle {
-        # terraform forces terraform_labels replacement
-        ignore_changes = [terraform_labels]
-    }
+  lifecycle {
+    # terraform forces terraform_labels replacement
+    ignore_changes = [terraform_labels]
+  }
 }
 
 # PubSub to BigQuery write subscription for dead letter
 resource "google_pubsub_subscription" "dead_letter" {
-  depends_on = [ google_pubsub_topic.dead_letter ]
+  depends_on = [google_pubsub_topic.dead_letter]
 
   name    = "${var.subscription_name}_dead_letter"
   project = var.project_id
@@ -40,7 +40,7 @@ resource "google_pubsub_subscription" "dead_letter" {
 
 # PubSub to BigQuery write subscription for data
 resource "google_pubsub_subscription" "data" {
-  depends_on = [ google_pubsub_topic.dead_letter ]
+  depends_on = [google_pubsub_topic.dead_letter]
 
   name    = var.subscription_name
   project = var.project_id
@@ -56,7 +56,7 @@ resource "google_pubsub_subscription" "data" {
   bigquery_config {
     table = "${var.bigquery_data_config.project}.${var.bigquery_data_config.dataset}.${var.bigquery_data_config.table}"
     # decide which schema should be used - table schema (true) or topic schema (false)
-    use_table_schema    = var.bigquery_data_config.use_table_schema
+    use_table_schema = var.bigquery_data_config.use_table_schema
     # decide if additional fields should cause the loading error
     drop_unknown_fields = var.bigquery_data_config.drop_unknown_fields
     # if set to true, additional data will be write to bq table, like publish_time
@@ -70,6 +70,6 @@ resource "google_pubsub_subscription" "data" {
 
   lifecycle {
     # terraform issue: terraform forces terraform_labels replacement
-    ignore_changes = [terraform_labels] 
+    ignore_changes = [terraform_labels]
   }
 }
