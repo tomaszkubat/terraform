@@ -11,7 +11,7 @@ resource "google_pubsub_subscription_iam_binding" "data_subscriber" {
 }
 
 # ... and dead letter messages
-resource "google_pubsub_subscription_iam_binding" "data_subscriber" {
+resource "google_pubsub_subscription_iam_binding" "dead_letter_subscriber" {
   depends_on = [google_pubsub_subscription.dead_letter]
 
   project      = var.project_id
