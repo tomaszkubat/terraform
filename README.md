@@ -64,16 +64,23 @@ module "my_module_usage" {
   source = "github.com/tomaszkubat/terraform/gcp/ps-write-subscription"
 
   # input parameters
+  topic_id = "<fully-qualified-data-topic-id>"
+
   project_id = "<my-project-id>"
   subscription_name = "<subscription-name>"
-  data_topic_id = "<fully-qualified-data-topic-id>"
-  bigquery_config = {
+  
+  bigquery_data_config = {
     project             = "<project_id>"
     dataset             = "<dataset_name>"
     table               = "<table_name>"
     drop_unknown_fields = true
     use_table_schema    = true
     write_metadata      = false
+  }
+  bigquery_dead_letter_config = {
+    project             = "<project_id>"
+    dataset             = "<dataset_name>"
+    table               = "<table_name>"
   }
 }
 
