@@ -1,9 +1,0 @@
-{
-    "dataset_name": "test_dataset",
-    "description": "my description",
-    "friendly_nam": "my friendly_nam",
-    "labels": {
-        "datasetlabel1": "value1",
-        "datasetlabel2": "value2"
-    }
-}
