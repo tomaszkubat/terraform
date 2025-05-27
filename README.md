@@ -30,8 +30,8 @@ Supported:
 | resource | status | description |
 |---|---|---|
 | dataset  | ✔️ | |
-| table  | ✔️ | work in progress |
-| view | ✔️ | in the future |
+| table  | ✔️ | native tables only|
+| view | ✔️ | native views only|
 | scheduled query | ❌ | in the future |
 
 ### ps-write-subsription
@@ -63,7 +63,7 @@ To use this module it's required to fulfill some prerequisites:
 ```terraform
 module "my_module_usage" {
   # clone over https example
-  source = "github.com/tomaszkubat/terraform/gcp/ps-write-subscription"
+  source = "github.com/tomaszkubat/terraform/gcp/bq-dataset"
 
   # input parameters
   topic_id = "<fully-qualified-data-topic-id>"
@@ -85,8 +85,9 @@ module "my_module_usage" {
     table               = "<table_name>"
   }
 }
-
 ```
+
+You can use example configuration included in `bq-dataset/example` to create a dummy resource in your project.
 
 ## null
 
