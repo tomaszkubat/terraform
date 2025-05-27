@@ -29,6 +29,10 @@ dataset_config_dir
 │   |   │   view1.json
 │   |   |   view2.json
 |   |   └───...
+│   └───sql
+│   |   │   view1.sql
+│   |   |   view2.sql
+|   |   └───...
 │   └───schema
 │       │   view1.json
 │       |   view2.json

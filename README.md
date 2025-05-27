@@ -31,7 +31,7 @@ Supported:
 |---|---|---|
 | dataset  | ✔️ | |
 | table  | ✔️ | work in progress |
-| view | ❌ | in the future |
+| view | ✔️ | in the future |
 | scheduled query | ❌ | in the future |
 
 ### ps-write-subsription
@@ -70,7 +70,7 @@ module "my_module_usage" {
 
   project_id = "<my-project-id>"
   subscription_name = "<subscription-name>"
-  
+
   bigquery_data_config = {
     project             = "<project_id>"
     dataset             = "<dataset_name>"

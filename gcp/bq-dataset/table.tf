@@ -1,8 +1,8 @@
 locals {
-  table_files = fileset(local.table_schema_path, "*.json")
+  table_schema_files = fileset(local.table_schema_path, "*.json")
 
   table_config_map = {
-    for f in local.table_files :
+    for f in local.table_schema_files :
     # use file name as key - ensures uniqueness across a directory
     f => {
       # remove file extension
