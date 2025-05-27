@@ -60,4 +60,36 @@ Files required for dataset:
 
 ### Table configuration
 
+Files required for table:
+- `tables/meta/<table_name>.json`
+- `tables/schema/<table_name>.json`
+
+```json
+// tables/meta/table1.json
+{
+    "labels": {
+        "tablelabel1": "value1",
+        "tablelabel2": "value2"
+    }
+}
+```
+
+```json
+// tables/schema/table1.json
+[
+    {
+        "name": "field_1",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "field_1 description"
+    },
+    {
+        "name": "field_2",
+        "type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "field_2 description"
+    }
+]
+```
+
 ### View configuration
