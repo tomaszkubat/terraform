@@ -100,3 +100,13 @@ Files required for table:
 ```
 
 ### View configuration
+
+View configuration is similar to [table configuration](#table-configuration).
+In addition, it contains `sql` file providing the `view` definition.
+
+```sql
+// views/sql/view1.sql
+SELECT
+    "abc" as field_1,
+    1 as field_2
+```
