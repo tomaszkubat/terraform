@@ -8,13 +8,13 @@
 
 ## Configuration
 
-The minimal configuration is:
-- TBC...
+The minimal configuration for dataset is `dataset/meta.json` file which contains the dataset configuration - by adding the `dataset/meta.json` file only you are allowed to create an empty dataset, without any content (tables, views, etc.)
+
 
 ```
 dataset_config_dir
 └───dataset
-|   └───meta.json
+|   └───meta.json <REQUIRED>
 └───tables
 │   └───meta
 │   |   │   table1.json
@@ -25,6 +25,7 @@ dataset_config_dir
 │       |   table2.json
 │       └───...
 └───views
+│   └───meta
 │   |   │   view1.json
 │   |   |   view2.json
 |   |   └───...
@@ -36,6 +37,8 @@ dataset_config_dir
 ```
 
 ## Configuration files
+
+For configuration file examples navigate to [bq-dataset/example/](/gcp/bq-dataset/example/).
 
 ### Dataset configuration
 
