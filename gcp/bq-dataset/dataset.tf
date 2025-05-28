@@ -1,6 +1,6 @@
 locals {
   # get dataset configuration data
-  dataset_meta_file_content = jsondecode(file("${var.configuration_path}/dataset/meta.json"))
+  dataset_meta_file_content = jsondecode(file("${local.dataset_path}${local.meta_subpath}dataset.json"))
   dataset_id                = "${var.dataset_prefix}${local.dataset_meta_file_content["dataset_name"]}"
 }
 

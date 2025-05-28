@@ -2,7 +2,7 @@
     {
         "name": "field_1",
         "type": "STRING",
-        "mode": "REQUIRED",
+        "mode": "NULLABLE",
         "description": "field_1 description"
     },
     {

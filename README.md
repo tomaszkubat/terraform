@@ -19,13 +19,46 @@ For testing use [null module](#null).
 
 Terraform modules.
 
-## gcp
 
-### bq-dataset
+# null
+
+### Description
+
+Null/dummy resource which may be used to test `terraform` import from `Github`.
+
+### Prerequisites
+
+None.
+
+### Supported resources
+
+No resources supported - modules serves as null dummy/test module.
+
+### Example usage
+
+```terraform
+module "my_module_usage" {
+  # clone over https example
+  source = "github.com/tomaszkubat/terraform/null/test"
+
+  # input parameters
+  # <no parameters>
+}
+```
+
+# gcp
+
+## bq-dataset
+
+### Description
 
 BigQuery dataset with related resources (tables, views, authorizations).
 
-Supported:
+### Prerequisites
+
+TBC
+
+### Supported resources
 
 | resource | status | description |
 |---|---|---|
@@ -34,7 +67,12 @@ Supported:
 | view | ✔️ | native views only|
 | scheduled query | ❌ | in the future |
 
-### ps-write-subsription
+### Example usage
+
+
+
+
+## ps-write-subsription
 
 ### Description
 
@@ -58,7 +96,7 @@ To use this module it's required to fulfill some prerequisites:
 | data table | ❌ | assume that the dataset/table are being created by separate, big query module |
 | dead letter table | ❌ | assume that the dataset/table are being created by separate, big query module |
 
-### Example usage
+## Example usage
 
 ```terraform
 module "my_module_usage" {
@@ -88,29 +126,3 @@ module "my_module_usage" {
 ```
 
 You can use example configuration included in `bq-dataset/example` to create a dummy resource in your project.
-
-## null
-
-### Description
-
-Null/dummy resource which may be used to test `terraform` import from `Github`.
-
-### Prerequisites
-
-None.
-
-### Supported resources
-
-No resources supported - modules serves as null dummy/test module.
-
-### Example usage
-
-```terraform
-module "my_module_usage" {
-  # clone over https example
-  source = "github.com/tomaszkubat/terraform/null/test"
-
-  # input parameters
-  # <no parameters>
-}
-```

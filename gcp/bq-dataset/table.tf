@@ -1,16 +1,16 @@
 locals {
-  table_schema_files = fileset(local.table_schema_path, "*.json")
+  table_schema_files = fileset("${local.tables_path}${local.schema_subpath}", "*.json")
 
   table_config_map = {
     for f in local.table_schema_files :
     # use file name as key - ensures uniqueness across a directory
-    f => {
+    replace(f, ".json", "") => {
       # remove file extension
       table_name = lower(replace(f, ".json", ""))
 
       # schema and meta files are mandatory
-      schema_json = file("${local.table_schema_path}${f}")
-      meta_json   = file("${local.table_meta_path}${f}")
+      schema_json = file("${local.tables_path}${local.schema_subpath}${f}")
+      meta_json   = file("${local.tables_path}${local.meta_subpath}${f}")
     }
   }
 }
