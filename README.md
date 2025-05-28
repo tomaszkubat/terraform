@@ -69,8 +69,21 @@ TBC
 
 ### Example usage
 
+```terraform
+module "bq_dataset_example_usage" {
+  # clone over https example
+  source = "github.com/tomaszkubat/terraform/gcp/bq-dataset"
 
+  # path to configuration files
+  configuration_path = "./../config/my_dataset"
 
+  # input parameters
+  project_id = "<YOUR_PROJECT_ID"
+  dataset_prefix = "test_"
+}
+```
+
+For more details see [example config](/gcp/bq-dataset/example/).
 
 ## ps-write-subsription
 
@@ -91,7 +104,7 @@ To use this module it's required to fulfill some prerequisites:
 |---|---|---|
 | data topic | ❌ | assume that the topic (producer) exists in external project |
 | data write subscriptions | ✔️ | |
-| dead letter write subscriptions for  | ✔️ | |
+| dead letter write subscriptions | ✔️ | |
 | dead letter topic  | ✔️ | |
 | data table | ❌ | assume that the dataset/table are being created by separate, big query module |
 | dead letter table | ❌ | assume that the dataset/table are being created by separate, big query module |
