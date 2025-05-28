@@ -8,13 +8,14 @@
 
 ## Configuration
 
-The minimal configuration for dataset is `dataset/meta.json` file which contains the dataset configuration - by adding the `dataset/meta.json` file only you are allowed to create an empty dataset, without any content (tables, views, etc.)
+The minimal configuration for dataset is `dataset/meta/dataset.json` file which contains the dataset configuration - by adding the `dataset/meta/dataset.json` file only you are allowed to create an empty dataset, without any content (tables, views, etc.)
 
 
 ```
 dataset_config_dir
 └───dataset
-|   └───meta.json <REQUIRED>
+│   └───meta
+|       └───dataset.json <REQUIRED>
 └───tables
 │   └───meta
 │   |   │   table1.json
@@ -29,11 +30,11 @@ dataset_config_dir
 │   |   │   view1.json
 │   |   |   view2.json
 |   |   └───...
-│   └───sql
+│   └───schema
 │   |   │   view1.sql
 │   |   |   view2.sql
 |   |   └───...
-│   └───schema
+│   └───sql
 │       │   view1.json
 │       |   view2.json
 │       └───...
@@ -110,3 +111,5 @@ SELECT
     "abc" as field_1,
     1 as field_2
 ```
+
+View schema cannot contain `REQUIRED` fields - use `NULLABLE` mode instead.
