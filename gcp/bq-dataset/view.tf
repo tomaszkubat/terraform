@@ -18,7 +18,7 @@ locals {
 
 resource "google_bigquery_table" "view" {
   # we expect to create tables before
-  depends_on = [ google_bigquery_table.table ]
+  depends_on = [google_bigquery_table.table]
 
   for_each = local.view_config_map
 
