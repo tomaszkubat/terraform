@@ -2,8 +2,6 @@
 
 - [About](#about)
 - [Modules](#modules)
-  - [gcp](#gcp)
-  - [null](#null)
 
 # About
 
@@ -13,129 +11,21 @@ The [Terraform Module Releaser](https://github.com/techpivot/terraform-module-re
 
 For modules usage navigate to auto-generated [Github Wiki](https://github.com/tomaszkubat/terraform/wiki).
 
-For testing use [null module](#null).
+For testing use [null test module](/null/test/README.md).
 
 # Modules
 
-Terraform modules.
+Supported modules:
 
+- [gcp](/gcp/README.md) - gcp modules.
+  - [bq-dataset](/gcp/bq-dataset/README.md) - `BigQuery`dataset with related resources like tables and views.
+  - [ps-write-subscription](/gcp/ps-write-subscription/README.md) - `PubSub` write subscription.
+- [null](/null/README.md)
+  - [test](/null/test/README.md) - test module which may be used 
 
-# null
+Each module information contains the following:
 
-### Description
-
-Null/dummy resource which may be used to test `terraform` import from `Github`.
-
-### Prerequisites
-
-None.
-
-### Supported resources
-
-No resources supported - modules serves as null dummy/test module.
-
-### Example usage
-
-```terraform
-module "my_module_usage" {
-  # clone over https example
-  source = "github.com/tomaszkubat/terraform/null/test"
-
-  # input parameters
-  # <no parameters>
-}
-```
-
-# gcp
-
-## bq-dataset
-
-### Description
-
-BigQuery dataset with related resources (tables, views, authorizations).
-
-### Prerequisites
-
-TBC
-
-### Supported resources
-
-| resource | status | description |
-|---|---|---|
-| dataset  | ✔️ | |
-| table  | ✔️ | native tables only|
-| view | ✔️ | native views only|
-| scheduled query | ❌ | in the future |
-
-### Example usage
-
-```terraform
-module "bq_dataset_example_usage" {
-  # clone over https example
-  source = "github.com/tomaszkubat/terraform/gcp/bq-dataset"
-
-  # path to configuration files
-  configuration_path = "./../config/my_dataset"
-
-  # input parameters
-  project_id = "<YOUR_PROJECT_ID"
-  dataset_prefix = "test_"
-}
-```
-
-For more details see [example config](/gcp/bq-dataset/example/).
-
-## ps-write-subsription
-
-### Description
-
-`PubSub` write subscription to `BigQuery` with handling dead letter writes.
-
-### Prerequisites
-
-To use this module it's required to fulfill some prerequisites:
-- pubsub `topic` - created in any GCP project, which will serve as and data endpoint,
-- `iam` permissions added to attach subscription on the `topic`,
-- `bq` tables for data and dead letter already created.
-
-### Supported resources
-
-| resource | status | description |
-|---|---|---|
-| data topic | ❌ | assume that the topic (producer) exists in external project |
-| data write subscriptions | ✔️ | |
-| dead letter write subscriptions | ✔️ | |
-| dead letter topic  | ✔️ | |
-| data table | ❌ | assume that the dataset/table are being created by separate, big query module |
-| dead letter table | ❌ | assume that the dataset/table are being created by separate, big query module |
-
-## Example usage
-
-```terraform
-module "my_module_usage" {
-  # clone over https example
-  source = "github.com/tomaszkubat/terraform/gcp/bq-dataset"
-
-  # input parameters
-  topic_id = "<fully-qualified-data-topic-id>"
-
-  project_id = "<my-project-id>"
-  subscription_name = "<subscription-name>"
-
-  bigquery_data_config = {
-    project             = "<project_id>"
-    dataset             = "<dataset_name>"
-    table               = "<table_name>"
-    drop_unknown_fields = true
-    use_table_schema    = true
-    write_metadata      = false
-  }
-  bigquery_dead_letter_config = {
-    project             = "<project_id>"
-    dataset             = "<dataset_name>"
-    table               = "<table_name>"
-  }
-}
-```
-
-You can use example configuration included in `bq-dataset/example` to create a dummy resource in your project.
+- description - a brief note about module purpose.
+- prerequisites - steps required to make to use module.
+- supported resources - resources managed by module.
+- example usage - module example implementation.
