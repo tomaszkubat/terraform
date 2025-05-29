@@ -11,11 +11,11 @@ This repository contains `tf` modules which may be reused in other projects.
 
 # Modules
 
-Supported modules:
+Supported modules.
 
 - [gcp](/gcp/README.md) - gcp modules.
-  - [bq-dataset](/gcp/bq-dataset/README.md) - `BigQuery`dataset with related resources like tables and views.
-  - [ps-write-subscription](/gcp/ps-write-subscription/README.md) - `PubSub` write subscription.
+  - <img src='https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FData%20Analytics%2FBigQuery.svg' width='32' height='32' /> [bq-dataset](/gcp/bq-dataset/README.md) - `BigQuery` dataset with related resources like tables and views.
+  - <img src='https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FData%20Analytics%2FCloud%20PubSub.svg' width='32' height='32' /> [ps-write-subscription](/gcp/ps-write-subscription/README.md) - `PubSub` write subscription.
 - [null](/null/README.md)
   - [test](/null/test/README.md) - test module which may be used
 
