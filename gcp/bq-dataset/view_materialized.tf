@@ -16,7 +16,7 @@ locals {
 }
 
 output "name" {
-  value =  local.view_materialized_config_map
+  value = local.view_materialized_config_map
 }
 
 resource "google_bigquery_table" "view_materialized" {
@@ -31,9 +31,9 @@ resource "google_bigquery_table" "view_materialized" {
 
   # materialized view definition
   materialized_view {
-    query               = each.value["sql_sql"]
-    enable_refresh      = each.value["meta_json"]["enable_refresh"]
-    refresh_interval_ms = each.value["meta_json"]["refresh_interval_ms"]
+    query                            = each.value["sql_sql"]
+    enable_refresh                   = each.value["meta_json"]["enable_refresh"]
+    refresh_interval_ms              = each.value["meta_json"]["refresh_interval_ms"]
     allow_non_incremental_definition = try(each.value["meta_json"]["allow_non_incremental_definition"], false)
   }
   # schema field shouldn't be used as input with a materialized view, invalid

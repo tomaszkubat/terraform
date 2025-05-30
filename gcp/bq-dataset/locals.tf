@@ -1,9 +1,9 @@
 locals {
   # resource paths - concatenate the relative configuration path with resource subpaths
-  dataset_path = "${var.configuration_path}/dataset/"
-  tables_path  = "${var.configuration_path}/tables/"
-  views_path   = "${var.configuration_path}/views/"
-  views_materialized_path   = "${var.configuration_path}/views_materialized/"
+  dataset_path            = "${var.configuration_path}/dataset/"
+  tables_path             = "${var.configuration_path}/tables/"
+  views_path              = "${var.configuration_path}/views/"
+  views_materialized_path = "${var.configuration_path}/views_materialized/"
 
   # subpaths
   meta_subpath   = "meta/"
