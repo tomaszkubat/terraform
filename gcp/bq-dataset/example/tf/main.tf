@@ -2,14 +2,14 @@
 module "bq_dataset_example_usage" {
   # clone over https example
   # for remote usage use:
-  source = "github.com/tomaszkubat/terraform/gcp/bq-dataset"
+  # source = "github.com/tomaszkubat/terraform/gcp/bq-dataset"
   # for local usage use:
-  # source = "./../../"
+  source = "./../../"
 
   # path to configuration files
   configuration_path = "./../config/my_dataset"
 
   # input parameters
-  project_id = "<MY_PROJECT_ID>"
+  project_id = "terraform-460610"
   dataset_prefix = "test_"
 }

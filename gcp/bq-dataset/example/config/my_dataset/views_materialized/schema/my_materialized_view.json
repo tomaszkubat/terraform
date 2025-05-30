@@ -1,0 +1,14 @@
+[
+    {
+        "name": "field_1",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "field_1 description"
+    },
+    {
+        "name": "cnt",
+        "type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "cnt"
+    }
+]
