@@ -10,6 +10,6 @@ module "bq_dataset_example_usage" {
   configuration_path = "./../config/my_dataset"
 
   # input parameters
-  project_id = "terraform-460610"
+  project_id = "<YOUR_PROJECT_ID>"
   dataset_prefix = "test_"
 }
