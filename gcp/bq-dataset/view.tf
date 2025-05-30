@@ -8,9 +8,8 @@ locals {
       # remove file extension
       view_name = lower(replace(f, ".json", ""))
 
-      meta_json = file("${local.views_path}${local.meta_subpath}${f}")
-      #TODO add templatefile
-      sql_sql     = file(replace("${local.views_path}${local.sql_subpath}${f}", ".json", ".sql"))
+      meta_json   = jsondecode(file("${local.views_path}${local.meta_subpath}${f}"))
+      sql_sql     = templatefile(replace("${local.views_path}${local.sql_subpath}${f}", ".json", ".sql"), local.variables_substitutions)
       schema_json = file("${local.views_path}${local.schema_subpath}${f}")
     }
   }

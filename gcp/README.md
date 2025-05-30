@@ -22,10 +22,21 @@ To use this module it's required to fulfill some prerequisites:
 | `table` - `native`  | ✔️ | |
 | `table` - `external`  | ❌ | in the future|
 | `view` - `native` | ✔️ | native views only|
-| `view` - `materialized` | ❌ | in the future |
+| `view` - `materialized` | ✔️ | in the future |
 | `scheduled query` | ❌ | in the future |
 | `iam` | ❌ | in the future |
 | `authorizations` | ❌ | in the future |
+
+```mermaid
+---
+title: Resource creation resolution order
+---
+stateDiagram-v2
+  [*] --> dataset
+  dataset --> tables
+  tables --> views
+  views --> [*]
+```
 
 ### Example usage
 
