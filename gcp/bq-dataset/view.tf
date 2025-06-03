@@ -8,9 +8,9 @@ locals {
       # remove file extension
       view_name = lower(replace(f, ".json", ""))
 
-      meta_json   = jsondecode(file("${local.views_path}${local.meta_subpath}${f}"))
-      sql_sql     = templatefile(replace("${local.views_path}${local.sql_subpath}${f}", ".json", ".sql"), local.variables_substitutions)
-      schema_json = file("${local.views_path}${local.schema_subpath}${f}")
+      meta   = jsondecode(file("${local.views_path}${local.meta_subpath}${f}"))
+      sql    = templatefile(replace("${local.views_path}${local.sql_subpath}${f}", ".json", ".sql"), local.variables_substitutions)
+      schema = file("${local.views_path}${local.schema_subpath}${f}")
     }
   }
 }
@@ -27,10 +27,10 @@ resource "google_bigquery_table" "view" {
 
   # view definition
   view {
-    query          = each.value["sql_sql"]
+    query          = each.value["sql"]
     use_legacy_sql = false
   }
 
-  schema = each.value["schema_json"]
-  labels = try(each.value["meta_json"]["labels"], null)
+  schema = each.value["schema"]
+  labels = try(each.value["meta"]["labels"], null)
 }

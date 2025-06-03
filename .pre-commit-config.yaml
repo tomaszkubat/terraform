@@ -10,21 +10,14 @@ repos:
   - id: check-yaml
   - id: check-json
 
-# terrafrom - linting for terraform
+# formatting and linting for terraform
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: 'v1.96.1'
+  rev: 'v1.77.1' # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
   - id: terraform_fmt
   - id: terraform_tflint
     args:
     - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
-
-# terraform - static code analysis
-- repo: https://github.com/bridgecrewio/checkov.git
-  rev: '3.2.255'
-  hooks:
-  - id: checkov
-    args: [
-      --soft-fail,
-      --quiet
-    ]
+  - id: terraform_validate
+  - id: terraform_checkov
+  # - id: terraform_docs # applied via terraform-releaser
