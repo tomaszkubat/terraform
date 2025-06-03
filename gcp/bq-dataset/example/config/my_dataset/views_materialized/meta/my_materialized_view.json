@@ -1,8 +1,0 @@
-{
-    "enable_refresh": true,
-    "refresh_interval_ms": 360000,
-    "labels": {
-        "viewmaterizlizedlabel1": "value1",
-        "viewmaterializedlabel2": "value2"
-    }
-}

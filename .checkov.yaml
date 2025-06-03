@@ -1,5 +1,0 @@
-compact: true # do not display code blocks
-quiet: true # display only failed checks
-skip-check:
-- CKV_GCP_81 # Ensure Big Query Datasets are encrypted with Customer Supplied Encryption Keys (CSEK)
-- CKV_GCP_83 # Ensure PubSub Topics are encrypted with Customer Supplied Encryption Keys (CSEK)
