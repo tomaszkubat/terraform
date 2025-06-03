@@ -1,13 +1,12 @@
 # terraform
 
-- [About](#about)
-- [Modules](#modules)
-
-# About
+[![Check Status](https://github.com/tomaszkubat/terraform/actions/workflows/terraform_check.yml/badge.svg?branch=master)](https://github.com/tomaszkubat/terraform/actions/actions)
+[![Release Status](https://github.com/tomaszkubat/terraform/actions/workflows/terraform_release.yml/badge.svg?branch=master)](https://github.com/tomaszkubat/terraform/actions/actions)
+[GitHub release](https://github.com/tomaszkubat/terraform/releases/latest)
 
 This repository contains `tf` modules which may be reused in other projects.
 
-<img src='docs/terraform.svg' width='400' height='200'/>
+<img src='docs/terraform.svg' width='300' height='120'/>
 
 # Modules
 
